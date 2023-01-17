@@ -14,3 +14,18 @@ def region_keywords_cloud():
     data = prueba()
     return jsonify(data)
 
+
+#enviar servicios
+@mod_api_project.route('/servicios', methods=['GET'])
+def servicios():
+    data = getServicios()
+    print(data)
+    return jsonify(data)
+
+#enviar especialidades
+@mod_api_project.route('/servicios/especialidades/<servicio>', methods=['GET'])
+def especialidades(servicio):
+    data = getEspecialidades(servicio)
+    print(data)
+    return jsonify(data)
+
