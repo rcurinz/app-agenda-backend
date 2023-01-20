@@ -9,4 +9,5 @@ class Servicios(Model):
     descripcion = db.Column(db.String(100), nullable=True)
     duracion = db.Column(db.Integer, nullable=True)
     precio = db.Column(db.Integer, nullable=True)
+    imagen = db.Column(db.String(100), nullable=True)
     id_profesional = db.Column(db.Integer, nullable=True)

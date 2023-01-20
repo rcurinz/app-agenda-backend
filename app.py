@@ -1,5 +1,6 @@
 import os
 from flask import Flask, jsonify
+from flask_migrate import Migrate
 from flask_cors import CORS
 from models import db
 
@@ -12,9 +13,13 @@ from controller.api_project_controller import mod_api_project
 app.register_blueprint(mod_api_project)
 db.app = app
 db.init_app(app)
+
 # Crear base de datos
 with app.app_context():
 	db.create_all()
+	db.session.commit()
+migrate = Migrate(app, db)
+migrate.init_app(app, db)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 

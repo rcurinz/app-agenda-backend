@@ -7,7 +7,7 @@ def getServicios():
     q = Servicios.query.all()
     servicios = []
     for servicio in q:
-        servicios.append({"id": servicio.id_servicio, 'name': servicio.nombre})
+        servicios.append({"id": servicio.id_servicio, 'name': servicio.nombre, 'descripcion': servicio.descripcion, 'duracion': servicio.duracion, 'precio': servicio.precio, 'imagen': servicio.imagen})
 
     return {"servicios":servicios}
 
