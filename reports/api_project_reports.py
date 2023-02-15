@@ -1,5 +1,6 @@
 from models import *
 
+
 def prueba():
     return {"test ":"prueba"}
 
@@ -19,3 +20,4 @@ def getEspecialidades(servicio):
     for especialidad in q:
         especialidades.append({"id": especialidad.id_especialidad, 'name': especialidad.nombre})
     return {"especialidades":especialidades}
+
